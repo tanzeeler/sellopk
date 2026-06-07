@@ -58,7 +58,7 @@ export function HeroSlideshow() {
             {/* Content — padded enough on mobile so arrows never overlap text */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-16 md:px-12 py-16">
               <h1
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-[800] mb-4 max-w-3xl tracking-tight leading-tight"
+                className="sm:text-4xl md:text-5xl lg:text-6xl text-white font-[800] mb-4 max-w-3xl tracking-tight text-[40px]"
                 style={{ fontFamily: "'Figtree', sans-serif" }}
               >
                 {slide.headline}
@@ -118,7 +118,6 @@ export function HeroSlideshow() {
           }
         `}} />
       </section>
-
       {/* Floating Quick Search Bar */}
       <div className="relative z-30 w-full px-4 -mt-[36px]">
         <div className="container mx-auto max-w-5xl">
