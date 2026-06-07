@@ -5,7 +5,7 @@ export function DownloadApp() {
   return (
     <section className="bg-secondary relative overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center gap-12 py-[80px] md:py-[110px]">
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 py-[60px] md:py-[110px]">
           
           <div className="flex-1 text-center md:text-left z-10">
             <h2 className="md:text-5xl font-[800] font-heading text-white mb-6 text-[22px]">
@@ -34,13 +34,13 @@ export function DownloadApp() {
             </div>
           </div>
 
-          <div className="flex-1 relative flex justify-center items-center">
+          <div className="flex-1 relative flex justify-center items-center max-w-[220px] sm:max-w-[280px] md:max-w-none mx-auto md:mx-0">
             <img
               src={publicAsset('app-mockup.png')}
               alt="Sello mobile app"
-              className="relative z-10 w-full max-w-[420px] h-auto object-contain drop-shadow-2xl"
+              className="relative z-10 w-full max-w-[220px] sm:max-w-[280px] md:max-w-[420px] h-auto object-contain drop-shadow-2xl"
             />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] bg-primary/20 rounded-full blur-[80px] z-0" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] md:w-[380px] md:h-[380px] bg-primary/20 rounded-full blur-[80px] z-0" />
           </div>
 
         </div>

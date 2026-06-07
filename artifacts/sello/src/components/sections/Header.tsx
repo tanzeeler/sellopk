@@ -71,8 +71,8 @@ export function Header() {
       {/* Mobile full-screen menu — rendered OUTSIDE header to avoid stacking context issues */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-[9999] bg-[#050B20] flex flex-col">
-          {/* Top bar */}
-          <div className="flex items-center justify-between px-4 h-[72px] border-b border-white/10 flex-shrink-0">
+          {/* Top bar — white like main header */}
+          <div className="flex items-center justify-between px-4 h-[72px] border-b border-[#EDEFF2] bg-white flex-shrink-0">
             <img
               src={publicAsset("blackLogo.svg")}
               alt="Sello"
@@ -80,7 +80,7 @@ export function Header() {
             />
             <button
               onClick={() => setMobileMenuOpen(false)}
-              className="text-white p-2"
+              className="text-[#0F172A] p-2"
               aria-label="Close menu"
             >
               <X className="w-7 h-7" />

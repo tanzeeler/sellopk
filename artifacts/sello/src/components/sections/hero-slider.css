@@ -304,6 +304,13 @@
   width: 100%;
 }
 
+@media (max-width: 767px) {
+  .mp-arrows {
+    bottom: 5.5rem;
+    right: 1rem;
+  }
+}
+
 @media (max-width: 600px) {
   .mp-content {
     left: 20px;

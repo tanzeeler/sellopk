@@ -93,11 +93,11 @@ export function CompareSection() {
               <p className="text-base lg:text-[17px] text-white/70 font-body mb-7 text-center lg:text-left leading-relaxed">
                 Stop guessing. Our comparison tool puts specs, pricing, and history from multiple listings on one screen.
               </p>
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3 mb-8 w-fit mx-auto lg:mx-0 lg:w-full">
                 {features.map((f, i) => (
-                  <li key={i} className="flex items-center gap-3 text-white/80 font-body text-sm leading-normal">
+                  <li key={i} className="flex items-center gap-3 text-white/80 font-body text-sm leading-normal text-left">
                     <CheckCircle2 className="w-[18px] h-[18px] text-primary shrink-0" strokeWidth={2} />
-                    <span className="flex-1">{f}</span>
+                    <span>{f}</span>
                   </li>
                 ))}
               </ul>
