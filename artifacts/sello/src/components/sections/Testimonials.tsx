@@ -164,8 +164,18 @@ export function Testimonials() {
                   "{review.quote}"
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0 text-secondary font-[700] font-heading text-sm">
-                    {review.initials}
+                  <div className="w-11 h-11 rounded-full overflow-hidden flex-shrink-0 bg-primary/10 border border-[#EDEFF2]">
+                    <img
+                      src={`https://api.dicebear.com/8.x/adventurer/svg?seed=${encodeURIComponent(review.name)}&backgroundColor=fbbf24,fde68a`}
+                      alt={review.name}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const el = e.currentTarget;
+                        el.style.display = 'none';
+                        const parent = el.parentElement!;
+                        parent.innerHTML = `<span class="w-full h-full flex items-center justify-center text-secondary font-bold font-heading text-sm bg-primary">${review.initials}</span>`;
+                      }}
+                    />
                   </div>
                   <div>
                     <h4 className="font-[700] font-heading text-[#0F172A] text-sm leading-tight">{review.name}</h4>
