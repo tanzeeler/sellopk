@@ -36,10 +36,10 @@ export function CompareSection() {
         style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '48px 48px' }}
       />
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-10 xl:gap-12">
+        <div className="mx-auto flex w-full max-w-[920px] flex-col gap-12 lg:grid lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-8">
 
           {/* Left: mock compare UI */}
-          <div className="w-full lg:flex-1 lg:max-w-[460px] mx-auto lg:mx-0">
+          <div className="w-full mx-auto lg:mx-0">
             <div className="bg-white/5 border border-white/10 p-6 backdrop-blur-sm">
               <div className="flex items-center gap-2 mb-5">
                 <GitCompareArrows className="w-5 h-5 text-primary" />
@@ -82,8 +82,8 @@ export function CompareSection() {
           </div>
 
           {/* Right: copy */}
-          <div className="w-full lg:flex-1 flex justify-center lg:justify-start">
-            <div className="w-full max-w-md lg:max-w-[420px]">
+          <div className="w-full flex justify-center lg:justify-start">
+            <div className="w-full max-w-md lg:max-w-none">
               <p className="text-sm font-bold text-primary uppercase tracking-widest mb-3 font-body text-center lg:text-left">
                 Smart Buying
               </p>
@@ -91,7 +91,10 @@ export function CompareSection() {
                 Compare cars side<br />by side, for free
               </h2>
               <p className="text-base lg:text-[17px] text-white/70 font-body mb-7 text-center lg:text-left leading-relaxed">
-                Stop guessing. Our comparison tool puts specs, pricing, and history from multiple listings on one screen.
+                <span className="md:hidden">Stop guessing. Our comparison</span>
+                <span className="hidden md:inline">
+                  Stop guessing. Our comparison tool puts specs, pricing, and history from multiple listings on one screen.
+                </span>
               </p>
               <ul className="space-y-3 mb-8 w-fit mx-auto lg:mx-0 lg:w-full">
                 {features.map((f, i) => (
