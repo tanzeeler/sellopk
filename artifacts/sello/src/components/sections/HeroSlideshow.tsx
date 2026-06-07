@@ -37,7 +37,7 @@ export function HeroSlideshow() {
 
   return (
     <div className="relative w-full">
-      <section className="relative w-full aspect-[16/7] min-h-[640px] bg-[#050B20] overflow-hidden">
+      <section className="relative w-full aspect-[3/4] sm:aspect-[16/9] md:aspect-[16/7] min-h-[480px] sm:min-h-[560px] md:min-h-[640px] bg-[#050B20] overflow-hidden">
         {slides.map((slide, idx) => (
           <div
             key={idx}
