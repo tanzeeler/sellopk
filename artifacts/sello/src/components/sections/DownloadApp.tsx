@@ -1,4 +1,5 @@
 import { SiAppstore, SiGoogleplay } from 'react-icons/si';
+import { publicAsset } from '@/lib/public-asset';
 
 export function DownloadApp() {
   return (
@@ -33,48 +34,12 @@ export function DownloadApp() {
             </div>
           </div>
 
-          <div className="flex-1 relative hidden md:flex justify-center items-center">
-            {/* Phone Mockup — fully visible, no clipping */}
-            <div className="relative w-[260px] h-[520px] bg-white rounded-[36px] border-[7px] border-[#1e1e1e] shadow-2xl overflow-hidden z-10">
-              {/* Notch */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-5 bg-[#1e1e1e] rounded-b-[14px] z-20" />
-              
-              {/* App UI */}
-              <div className="w-full h-full bg-background flex flex-col">
-                <div className="bg-primary pt-7 pb-3 px-4 flex items-center justify-between">
-                  <span className="text-secondary font-heading font-[800] text-lg">Sello</span>
-                  <div className="w-6 h-6 rounded-full bg-secondary/20" />
-                </div>
-                <div className="p-3 flex-1 overflow-hidden">
-                  <div className="w-full h-28 bg-muted/30 rounded-[3px] mb-3" />
-                  <div className="w-2/3 h-3 bg-muted/40 rounded-[3px] mb-2" />
-                  <div className="w-1/2 h-3 bg-muted/30 rounded-[3px] mb-4" />
-                  <div className="flex gap-2 mb-3">
-                    <div className="flex-1 h-20 bg-muted/20 rounded-[3px]" />
-                    <div className="flex-1 h-20 bg-muted/20 rounded-[3px]" />
-                  </div>
-                  <div className="w-full h-3 bg-muted/30 rounded-[3px] mb-2" />
-                  <div className="w-3/4 h-3 bg-muted/20 rounded-[3px] mb-4" />
-                  <div className="flex gap-2">
-                    <div className="flex-1 h-16 bg-muted/20 rounded-[3px]" />
-                    <div className="flex-1 h-16 bg-primary/30 rounded-[3px]" />
-                  </div>
-                </div>
-                {/* Bottom nav bar */}
-                <div className="flex justify-around items-center py-3 border-t border-muted/20 bg-white">
-                  {[
-                    <svg key="home" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>,
-                    <svg key="search" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>,
-                    <svg key="heart" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>,
-                    <svg key="user" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>,
-                  ].map((icon, i) => (
-                    <div key={i} className={`${i === 0 ? 'text-primary opacity-100' : 'text-[#6B7280] opacity-40'}`}>{icon}</div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            
-            {/* Glow blob */}
+          <div className="flex-1 relative flex justify-center items-center">
+            <img
+              src={publicAsset('app-mockup.png')}
+              alt="Sello mobile app"
+              className="relative z-10 w-full max-w-[420px] h-auto object-contain drop-shadow-2xl"
+            />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] bg-primary/20 rounded-full blur-[80px] z-0" />
           </div>
 

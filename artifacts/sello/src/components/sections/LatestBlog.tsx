@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { publicAsset } from '@/lib/public-asset';
 
 export function LatestBlog() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -24,23 +25,23 @@ export function LatestBlog() {
 
   const articles = [
     {
-      img: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80",
-      tag: "Buying Guide",
-      title: "Best used SUVs under 40 lac in 2026",
-      date: "Oct 12, 2026"
+      img: publicAsset('blog/suv-guide.jpg'),
+      tag: 'Buying Guide',
+      title: 'Best used SUVs under 40 lac in 2026',
+      date: 'Oct 12, 2026',
     },
     {
-      img: "https://images.unsplash.com/photo-1632823471415-467f551c6c62?auto=format&fit=crop&w=800&q=80",
-      tag: "Tips & Tricks",
-      title: "How to inspect a used car before buying",
-      date: "Oct 05, 2026"
+      img: publicAsset('blog/car-inspection.jpg'),
+      tag: 'Tips & Tricks',
+      title: 'How to inspect a used car before buying',
+      date: 'Oct 05, 2026',
     },
     {
-      img: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80",
-      tag: "Market Trends",
-      title: "2026 car price trends in Pakistan",
-      date: "Sep 28, 2026"
-    }
+      img: publicAsset('blog/price-trends.jpg'),
+      tag: 'Market Trends',
+      title: '2026 car price trends in Pakistan',
+      date: 'Sep 28, 2026',
+    },
   ];
 
   return (

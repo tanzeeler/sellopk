@@ -1,5 +1,23 @@
 import { GitCompareArrows, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { publicAsset } from '@/lib/public-asset';
+
+const compareCars = [
+  {
+    make: 'Honda',
+    model: 'Civic',
+    year: '2021',
+    price: '55 Lac',
+    image: publicAsset('compare-cars/honda-civic.png'),
+  },
+  {
+    make: 'Toyota',
+    model: 'Corolla',
+    year: '2021',
+    price: '38.5 Lac',
+    image: publicAsset('compare-cars/toyota-corolla.png'),
+  },
+];
 
 const features = [
   "Engine specs & performance",
@@ -18,7 +36,7 @@ export function CompareSection() {
         style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '48px 48px' }}
       />
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-20 items-center lg:items-center">
 
           {/* Left: mock compare UI */}
           <div className="flex-1 w-full max-w-lg mx-auto lg:mx-0">
@@ -29,12 +47,15 @@ export function CompareSection() {
               </div>
 
               <div className="grid grid-cols-2 gap-4 mb-6">
-                {[
-                  { make: 'Honda', model: 'Civic', year: '2021', price: '55 Lac' },
-                  { make: 'Toyota', model: 'Corolla', year: '2021', price: '38.5 Lac' },
-                ].map((car, i) => (
+                {compareCars.map((car, i) => (
                   <div key={i} className="bg-white/10 p-4 border border-white/10">
-                    <div className="flex justify-center mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white/60"><path d="M5 17H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1"/><path d="M17 17h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-1"/><path d="M14 17H8"/><path d="M5 9l2-4h10l2 4"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg></div>
+                    <div className="flex justify-center mb-3 h-14">
+                      <img
+                        src={car.image}
+                        alt={`${car.make} ${car.model}`}
+                        className="h-full w-auto max-w-full object-contain drop-shadow-md"
+                      />
+                    </div>
                     <p className="text-white font-heading font-[700] text-sm">{car.make} {car.model}</p>
                     <p className="text-white/50 text-xs font-body">{car.year}</p>
                     <p className="text-primary font-[800] font-heading text-sm mt-1">PKR {car.price}</p>
@@ -61,26 +82,30 @@ export function CompareSection() {
           </div>
 
           {/* Right: copy */}
-          <div className="flex-1 text-center lg:text-left">
-            <p className="text-sm font-bold text-primary uppercase tracking-widest mb-3 font-body">Smart Buying</p>
-            <h2 className="sm:text-2xl md:text-3xl lg:text-5xl font-[800] font-heading text-white mb-6 text-[25px]">
-              Compare cars side<br/>by side, for free
-            </h2>
-            <p className="text-lg text-white/70 font-body mb-8 max-w-md mx-auto lg:mx-0">
-              Stop guessing. Our comparison tool puts specs, pricing, and history from multiple listings on one screen.
-            </p>
-            <ul className="space-y-3 mb-10 inline-block text-left">
-              {features.map((f, i) => (
-                <li key={i} className="flex items-center gap-3 text-white/80 font-body text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
-                  {f}
-                </li>
-              ))}
-            </ul>
-            <div>
-              <Button className="rounded-[3px] bg-primary text-[#050B20] font-bold px-8 h-12 text-base">
-                Start comparing now
-              </Button>
+          <div className="flex-1 w-full flex justify-center lg:justify-end">
+            <div className="w-full max-w-md lg:max-w-[400px] lg:pl-10 xl:pl-16">
+              <p className="text-sm font-bold text-primary uppercase tracking-widest mb-3 font-body text-center lg:text-left">
+                Smart Buying
+              </p>
+              <h2 className="text-[22px] sm:text-xl md:text-2xl lg:text-[32px] font-[800] font-heading text-white mb-5 text-center lg:text-left leading-snug">
+                Compare cars side<br />by side, for free
+              </h2>
+              <p className="text-base lg:text-[17px] text-white/70 font-body mb-7 text-center lg:text-left leading-relaxed">
+                Stop guessing. Our comparison tool puts specs, pricing, and history from multiple listings on one screen.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {features.map((f, i) => (
+                  <li key={i} className="flex items-center gap-3 text-white/80 font-body text-sm leading-normal">
+                    <CheckCircle2 className="w-[18px] h-[18px] text-primary shrink-0" strokeWidth={2} />
+                    <span className="flex-1">{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex justify-center lg:justify-start">
+                <Button className="rounded-[3px] bg-primary text-[#050B20] font-bold px-8 h-12 text-base">
+                  Start comparing now
+                </Button>
+              </div>
             </div>
           </div>
 

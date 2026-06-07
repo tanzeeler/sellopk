@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon / PWA -->
+    <link rel="icon" href="/favicon.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Performance: API + Meta CAPI gateway early; Facebook only dns-prefetch until deferred pixel loads -->
+    <link rel="preconnect" href="https://api.sello.pk" crossorigin />
+    <link rel="preconnect" href="https://capig.stape.vip" crossorigin />
+    <link rel="dns-prefetch" href="https://maps.googleapis.com" />
+    <link rel="dns-prefetch" href="https://connect.facebook.net" />
+
+    <!-- LCP: stable URLs (copied to /lcp/ at build) — discoverable before JS bundle -->
+    <link
+      rel="preload"
+      as="image"
+      href="/lcp/heroMobile.webp"
+      fetchpriority="high"
+      media="(max-width: 767px)"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/lcp/hero.webp"
+      fetchpriority="high"
+      media="(min-width: 768px)"
+    />
+
+    <!-- Critical shell CSS before Tailwind bundle — reduces mobile CLS/LCP snap -->
+    <style>
+      #root {
+        min-height: 100vh;
+      }
+
+      .sello-hero-shell {
+        position: relative;
+        min-height: 48vh;
+        width: 100%;
+        overflow: hidden;
+        background: #0f172a;
+        contain: layout style;
+      }
+
+      .sello-site-nav {
+        min-height: 52px;
+        contain: layout style;
+      }
+
+      @media (min-width: 640px) {
+        .sello-site-nav {
+          min-height: 56px;
+        }
+      }
+
+      .sello-bottom-bar {
+        box-sizing: border-box;
+        min-height: 52px;
+        height: 52px;
+        max-height: 52px;
+        background: #050b20;
+        contain: layout style;
+      }
+
+      @media (min-width: 768px) {
+        .sello-bottom-bar {
+          min-height: 56px;
+          height: 56px;
+          max-height: 56px;
+        }
+      }
+
+      .sello-auth-slot {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        min-height: 44px;
+        min-width: 44px;
+      }
+
+      @media (min-width: 640px) {
+        .sello-auth-slot {
+          min-width: 112px;
+        }
+      }
+    </style>
+
+    <!-- SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#3B82F6" />
+    <meta name="author" content="Sello" />
+    <meta name="publisher" content="Sello" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <meta
+      name="description"
+      content="Sello helps you buy and sell cars in Pakistan with verified listings, smart filters, and trusted dealers."
+    />
+
+    <link rel="canonical" href="https://sello.pk/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sello" />
+    <meta property="og:title" content="Sello - Buy and Sell Cars in Pakistan" />
+    <meta
+      property="og:description"
+      content="Discover verified car listings, compare options, and sell your car confidently on Sello."
+    />
+    <meta property="og:url" content="https://sello.pk/" />
+    <meta property="og:image" content="https://sello.pk/favicon.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Sello - Buy and Sell Cars in Pakistan"
+    />
+    <meta
+      name="twitter:description"
+      content="Discover verified car listings, compare options, and sell your car confidently on Sello."
+    />
+    <meta name="twitter:image" content="https://sello.pk/favicon.png" />
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js",
+      );
+      fbq("init", "1687648445884627");
+      fbq("track", "PageView");
+    </script>
+    <!-- End Meta Pixel Code -->
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "name": "Sello",
+            "url": "https://sello.pk/",
+            "logo": "https://sello.pk/assets/blackLogo-BWAk2Vcy.svg",
+            "slogan": "Pakistan's Smart Car Marketplace",
+            "description": "Sello is Pakistan's smart marketplace for buying and selling cars with AI-powered price estimation, live auctions, and free inspection services.",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+923122221474",
+              "contactType": "customer support",
+              "areaServed": "PK",
+              "availableLanguage": ["English", "Urdu"]
+            },
+            "sameAs": [
+              "https://www.instagram.com/sello.pakistan",
+              "https://youtube.com/@sello.pakistan",
+              "https://www.facebook.com/share/1DRC6dbkdQ/",
+              "https://x.com/sellopak",
+              "https://www.tiktok.com/@sello.pakistan"
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "PK",
+              "addressLocality": "Okara",
+              "postalCode": "56300",
+              "streetAddress": "Gateway Mall"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "name": "Sello",
+            "url": "https://sello.pk/",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://sello.pk/listings?search={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "CollectionPage",
+            "name": "Car Listings",
+            "url": "https://sello.pk/listings/car"
+          },
+          {
+            "@type": "CollectionPage",
+            "name": "All Listings",
+            "url": "https://sello.pk/listings"
+          },
+          {
+            "@type": "Service",
+            "name": "AI Car Price Estimator",
+            "url": "https://sello.pk/car-estimator",
+            "description": "Get instant AI-based car valuation in Pakistan.",
+            "provider": {
+              "@type": "Organization",
+              "name": "Sello"
+            }
+          },
+          {
+            "@type": "Service",
+            "name": "Car Auctions",
+            "url": "https://sello.pk/auctions",
+            "description": "Participate in online car auctions across Pakistan.",
+            "provider": {
+              "@type": "Organization",
+              "name": "Sello"
+            }
+          },
+          {
+            "@type": "Service",
+            "name": "Live Car Auctions",
+            "url": "https://sello.pk/auctions/live",
+            "description": "Join live auctions and bid on cars in real-time.",
+            "provider": {
+              "@type": "Organization",
+              "name": "Sello"
+            }
+          },
+          {
+            "@type": "Service",
+            "name": "Sell Your Car",
+            "url": "https://sello.pk/sellyoucar",
+            "description": "Sell your car easily with free inspection and maximum value.",
+            "provider": {
+              "@type": "Organization",
+              "name": "Sello"
+            }
+          },
+          {
+            "@type": "AboutPage",
+            "name": "About Sello",
+            "url": "https://sello.pk/about"
+          },
+          {
+            "@type": "ContactPage",
+            "name": "Contact Sello",
+            "url": "https://sello.pk/contact"
+          },
+          {
+            "@type": "Blog",
+            "name": "Sello Blog",
+            "url": "https://sello.pk/blog"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-81SP569LXT"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-81SP569LXT");
+    </script>
+
+    <!-- Title -->
+    <title>Sello - Buy and Sell Cars in Pakistan</title>
+    <script type="module" crossorigin src="/assets/index-BuaWCxF6.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/react-vendor-B9w7wpj1.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-router-Bkp0Pnpd.js">
+    <link rel="modulepreload" crossorigin href="/assets/maps-BTojMvQw.js">
+    <link rel="modulepreload" crossorigin href="/assets/forms-D1mwV9-s.js">
+    <link rel="modulepreload" crossorigin href="/assets/documents-BFvONqU0.js">
+    <link rel="modulepreload" crossorigin href="/assets/ui-libs-CUOJOymi.js">
+    <link rel="modulepreload" crossorigin href="/assets/socket-DRbsQkF5.js">
+    <link rel="modulepreload" crossorigin href="/assets/auth-B5z5Uktk.js">
+    <link rel="modulepreload" crossorigin href="/assets/framer-motion-DrXnWE8A.js">
+    <link rel="modulepreload" crossorigin href="/assets/axios-Dos3PyFQ.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BmkOUm9C.css">
+  </head>
+
+  <body>
+    <!-- Meta Pixel Noscript -->
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=1329404792372303&ev=PageView&noscript=1"
+        alt=""
+      />
+    </noscript>
+
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=1687648445884627&ev=PageView&noscript=1"
+        alt=""
+      />
+    </noscript>
+
+    <!-- React Root -->
+    <div id="root"></div>
+
+    <!-- React Entry -->
+  </body>
+</html>

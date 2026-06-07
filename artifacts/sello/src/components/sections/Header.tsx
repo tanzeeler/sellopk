@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'wouter';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, LogIn, Car } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { publicAsset } from '@/lib/public-asset';
 
 const NAV_LINKS = ['Buy', 'Sell', 'Dealers', 'Compare', 'Pricing', 'Help'];
 
@@ -23,24 +24,23 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 w-full z-50 transition-all duration-300 border-b border-[rgba(237,239,242,0.15)] ${
-          scrolled ? 'h-[60px] bg-[#050B20]/92 backdrop-blur-[16px]' : 'h-[72px] bg-[#050B20]/72 backdrop-blur-[16px]'
+        className={`fixed top-0 w-full z-50 transition-all duration-300 border-b border-[#EDEFF2] bg-white ${
+          scrolled ? 'h-[60px] shadow-sm' : 'h-[72px]'
         }`}
       >
         <div className="container mx-auto px-4 h-full flex items-center justify-between">
           <Link href="/">
             <img
-              src="https://sello.pk/assets/blackLogo-BWAk2Vcy.svg"
+              src={publicAsset("blackLogo.svg")}
               alt="Sello"
-              className="h-8 w-auto cursor-pointer"
-              style={{ filter: 'brightness(0) invert(1)' }}
+              className="h-9 w-auto cursor-pointer"
             />
           </Link>
 
           <nav className="hidden md:flex items-center gap-6">
             {NAV_LINKS.map(link => (
               <Link key={link} href={`/${link.toLowerCase()}`}>
-                <span className="text-white hover:text-primary transition-colors font-body text-sm font-medium cursor-pointer">
+                <span className="text-[#0F172A] hover:text-primary transition-colors font-body text-sm font-medium cursor-pointer">
                   {link}
                 </span>
               </Link>
@@ -48,16 +48,18 @@ export function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="outline" className="text-white border-white hover:bg-white/10 rounded-[3px]">
+            <Button variant="outline" className="text-[#0F172A] border-[#EDEFF2] hover:bg-[#F8F9FA] rounded-[3px] gap-2">
+              <LogIn className="w-4 h-4" />
               Login
             </Button>
-            <Button className="rounded-[3px] bg-primary text-[#050B20] hover:bg-primary/90 font-semibold">
+            <Button className="rounded-[3px] bg-primary text-[#050B20] hover:bg-primary/90 font-semibold gap-2">
+              <Car className="w-4 h-4" />
               Sell your car
             </Button>
           </div>
 
           <button
-            className="md:hidden text-white p-2"
+            className="md:hidden text-[#0F172A] p-2"
             onClick={() => setMobileMenuOpen(true)}
             aria-label="Open menu"
           >
@@ -72,10 +74,9 @@ export function Header() {
           {/* Top bar */}
           <div className="flex items-center justify-between px-4 h-[72px] border-b border-white/10 flex-shrink-0">
             <img
-              src="https://sello.pk/assets/blackLogo-BWAk2Vcy.svg"
+              src={publicAsset("blackLogo.svg")}
               alt="Sello"
-              className="h-8 w-auto"
-              style={{ filter: 'brightness(0) invert(1)' }}
+              className="h-9 w-auto"
             />
             <button
               onClick={() => setMobileMenuOpen(false)}
@@ -104,15 +105,17 @@ export function Header() {
           <div className="flex flex-col gap-3 px-6 pb-10 flex-shrink-0">
             <Button
               variant="outline"
-              className="w-full h-14 text-white border-white/40 hover:bg-white/10 rounded-[3px] text-base font-bold"
+              className="w-full h-14 text-white border-white/40 hover:bg-white/10 rounded-[3px] text-base font-bold gap-2"
               onClick={() => setMobileMenuOpen(false)}
             >
+              <LogIn className="w-5 h-5" />
               Login
             </Button>
             <Button
-              className="w-full h-14 rounded-[3px] bg-primary text-[#050B20] hover:bg-primary/90 font-bold text-base"
+              className="w-full h-14 rounded-[3px] bg-primary text-[#050B20] hover:bg-primary/90 font-bold text-base gap-2"
               onClick={() => setMobileMenuOpen(false)}
             >
+              <Car className="w-5 h-5" />
               Sell your car
             </Button>
           </div>

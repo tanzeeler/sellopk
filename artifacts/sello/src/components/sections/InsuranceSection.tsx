@@ -1,13 +1,14 @@
 import { ShieldCheck, ArrowRight, Zap, ClipboardList, Shield, PhoneCall } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { publicAsset } from '@/lib/public-asset';
 
 const partners = [
-  { name: "Jubilee", abbr: "JU", color: "bg-blue-600" },
-  { name: "EFU Life", abbr: "EFU", color: "bg-red-600" },
-  { name: "Adamjee", abbr: "AJ", color: "bg-green-700" },
-  { name: "TPL Direct", abbr: "TPL", color: "bg-purple-600" },
-  { name: "IGI Insurance", abbr: "IGI", color: "bg-orange-600" },
-  { name: "Atlas Honda", abbr: "AH", color: "bg-sky-600" },
+  { name: 'Jubilee', logo: 'insurance-logos/jubilee-alt.png' },
+  { name: 'EFU Life', logo: 'insurance-logos/efu.svg' },
+  { name: 'Adamjee', logo: 'insurance-logos/adamjee.png' },
+  { name: 'TPL Direct', logo: 'insurance-logos/tpl.svg' },
+  { name: 'IGI Insurance', logo: 'insurance-logos/igi.jpg' },
+  { name: 'Atlas Honda', logo: 'insurance-logos/atlas-honda.png' },
 ];
 
 const benefits = [
@@ -36,9 +37,14 @@ export function InsuranceSection() {
         {/* Partners logos strip */}
         <div className="flex flex-wrap justify-center gap-4 mb-14">
           {partners.map((p, i) => (
-            <div key={i} className="flex items-center gap-2 border border-[#EDEFF2] bg-white px-5 py-3 hover:border-primary/30 hover:shadow-sm transition-all cursor-pointer">
-              <div className={`w-7 h-7 rounded-full ${p.color} flex items-center justify-center text-white text-[10px] font-bold`}>
-                {p.abbr.slice(0, 2)}
+            <div key={i} className="flex items-center gap-3 border border-[#EDEFF2] bg-white px-5 py-3 hover:border-primary/30 hover:shadow-sm transition-all cursor-pointer">
+              <div className="w-9 h-9 flex items-center justify-center flex-shrink-0">
+                <img
+                  src={publicAsset(p.logo)}
+                  alt={`${p.name} logo`}
+                  className="max-h-full max-w-full object-contain"
+                  loading="lazy"
+                />
               </div>
               <span className="font-heading font-[700] text-[#0F172A] text-sm">{p.name}</span>
             </div>

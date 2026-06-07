@@ -14,6 +14,7 @@ const deals = [
     color: "bg-red-500",
     fuel: "Petrol",
     transmission: "Automatic",
+    img: "https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=800&q=80",
   },
   {
     make: "Honda",
@@ -27,6 +28,7 @@ const deals = [
     color: "bg-primary",
     fuel: "Petrol",
     transmission: "CVT",
+    img: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80",
   },
   {
     make: "Suzuki",
@@ -40,6 +42,7 @@ const deals = [
     color: "bg-orange-500",
     fuel: "Petrol",
     transmission: "Manual",
+    img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80",
   },
   {
     make: "Kia",
@@ -53,6 +56,7 @@ const deals = [
     color: "bg-emerald-600",
     fuel: "Petrol",
     transmission: "Automatic",
+    img: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80",
   },
 ];
 
@@ -80,9 +84,12 @@ export function HotDeals() {
               key={idx}
               className="group border border-[#EDEFF2] hover:border-primary/30 hover:shadow-lg transition-all duration-300 cursor-pointer"
             >
-              {/* Image placeholder with tag */}
-              <div className="relative h-44 bg-gradient-to-br from-[#F1F3F5] to-[#E8EAED] overflow-hidden">
-
+              <div className="relative h-44 overflow-hidden bg-[#F1F3F5]">
+                <img
+                  src={deal.img}
+                  alt={`${deal.make} ${deal.model}`}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
                 <span className={`absolute top-3 left-3 text-xs font-bold text-white px-2.5 py-1 rounded-[3px] ${deal.color}`}>
                   {deal.tag}
                 </span>

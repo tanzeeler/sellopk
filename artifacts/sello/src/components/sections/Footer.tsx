@@ -1,5 +1,6 @@
 import { SiFacebook, SiInstagram, SiX, SiYoutube, SiAppstore, SiGoogleplay } from 'react-icons/si';
 import { Lock, CheckCircle } from 'lucide-react';
+import { publicAsset } from '@/lib/public-asset';
 
 export function Footer() {
   return (
@@ -8,10 +9,9 @@ export function Footer() {
         <div className="flex flex-col lg:flex-row gap-12 mb-16">
           <div className="lg:w-1/4">
             <img
-              src="https://sello.pk/assets/blackLogo-BWAk2Vcy.svg"
+              src={publicAsset("whiteLogo.png")}
               alt="Sello"
-              className="h-9 w-auto mb-4"
-              style={{ filter: 'brightness(0) invert(1)' }}
+              className="h-12 w-auto mb-4"
             />
             <p className="text-white/70 font-body text-sm mb-6 leading-relaxed">
               Pakistan's most trusted car marketplace. Buy, sell, and finance cars with complete peace of mind.

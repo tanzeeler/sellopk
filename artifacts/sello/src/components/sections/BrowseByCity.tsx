@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { publicAsset } from '@/lib/public-asset';
 
 export function BrowseByCity() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -23,14 +24,14 @@ export function BrowseByCity() {
   }, []);
 
   const cities = [
-    { name: "Karachi", count: "3,200+", img: "https://images.unsplash.com/photo-1616428789504-2ee3b246a47a?auto=format&fit=crop&w=600&q=80" },
-    { name: "Lahore", count: "2,800+", img: "https://images.unsplash.com/photo-1589417855660-f4b684534f37?auto=format&fit=crop&w=600&q=80" },
-    { name: "Islamabad", count: "1,900+", img: "https://images.unsplash.com/photo-1586026938950-29c4883f0cb1?auto=format&fit=crop&w=600&q=80" },
-    { name: "Rawalpindi", count: "1,100+", img: "https://images.unsplash.com/photo-1623864708781-a67b458b0f83?auto=format&fit=crop&w=600&q=80" },
-    { name: "Faisalabad", count: "890+", img: "https://images.unsplash.com/photo-1599320293121-654db03fb8ce?auto=format&fit=crop&w=600&q=80" },
-    { name: "Multan", count: "650+", img: "https://images.unsplash.com/photo-1610488665961-3965fc18606c?auto=format&fit=crop&w=600&q=80" },
-    { name: "Peshawar", count: "480+", img: "https://images.unsplash.com/photo-1601058269785-36ce85c07b04?auto=format&fit=crop&w=600&q=80" },
-    { name: "Quetta", count: "320+", img: "https://images.unsplash.com/photo-1601614749298-500b1a0e0f31?auto=format&fit=crop&w=600&q=80" }
+    { name: "Karachi", count: "3,200+", img: publicAsset("cities/karachi.jpg") },
+    { name: "Lahore", count: "2,800+", img: publicAsset("cities/lahore.jpg") },
+    { name: "Islamabad", count: "1,900+", img: publicAsset("cities/islamabad.jpg") },
+    { name: "Rawalpindi", count: "1,100+", img: publicAsset("cities/rawalpindi.jpg") },
+    { name: "Faisalabad", count: "890+", img: publicAsset("cities/faisalabad.jpg") },
+    { name: "Multan", count: "650+", img: publicAsset("cities/multan.jpg") },
+    { name: "Peshawar", count: "480+", img: publicAsset("cities/peshawar.jpg") },
+    { name: "Quetta", count: "320+", img: publicAsset("cities/quetta.jpg") },
   ];
 
   return (

@@ -1,14 +1,16 @@
+import { publicAsset } from "@/lib/public-asset";
+
 const brands = [
-  { name: "Toyota",   initial: "T", color: "#EB0A1E" },
-  { name: "Honda",    initial: "H", color: "#CC0000" },
-  { name: "Suzuki",   initial: "S", color: "#004B87" },
-  { name: "Kia",      initial: "K", color: "#05141F" },
-  { name: "Hyundai",  initial: "H", color: "#002C5F" },
-  { name: "MG",       initial: "M", color: "#A50020" },
-  { name: "Nissan",   initial: "N", color: "#C3002F" },
-  { name: "Daihatsu", initial: "D", color: "#E60026" },
-  { name: "Changan",  initial: "C", color: "#003DA5" },
-  { name: "Haval",    initial: "H", color: "#1A1A1A" },
+  { name: "Toyota", logo: "brand-logos/toyota.svg" },
+  { name: "Honda", logo: "brand-logos/honda.svg" },
+  { name: "Suzuki", logo: "brand-logos/suzuki.svg" },
+  { name: "Kia", logo: "brand-logos/kia.svg" },
+  { name: "Hyundai", logo: "brand-logos/hyundai.svg" },
+  { name: "MG", logo: "brand-logos/mg.svg" },
+  { name: "Nissan", logo: "brand-logos/nissan.svg" },
+  { name: "Daihatsu", logo: "brand-logos/daihatsu.png" },
+  { name: "Changan", logo: "brand-logos/changan.png" },
+  { name: "Haval", logo: "brand-logos/haval.png" },
 ];
 
 export function PopularBrands() {
@@ -26,11 +28,13 @@ export function PopularBrands() {
               key={brand.name}
               className="group flex flex-col items-center justify-center gap-3 bg-white border border-[#EDEFF2] hover:border-primary/40 hover:shadow-md transition-all duration-200 p-4 md:p-6 rounded-[3px]"
             >
-              <div
-                className="w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center text-white font-heading font-[900] text-xl md:text-2xl flex-shrink-0"
-                style={{ backgroundColor: brand.color }}
-              >
-                {brand.initial}
+              <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center flex-shrink-0">
+                <img
+                  src={publicAsset(brand.logo)}
+                  alt={`${brand.name} logo`}
+                  className="max-h-full max-w-full object-contain"
+                  loading="lazy"
+                />
               </div>
               <span className="text-xs md:text-sm font-heading font-[700] text-[#0F172A] group-hover:text-primary transition-colors">
                 {brand.name}

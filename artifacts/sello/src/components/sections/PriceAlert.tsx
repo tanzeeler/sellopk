@@ -1,5 +1,6 @@
 import { Bell, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { FilterSelect } from '@/components/ui/filter-select';
 
 const examples = [
   { make: "Toyota Corolla", budget: "Under 40 Lac", city: "Lahore", alerts: "142 alerts sent" },
@@ -26,21 +27,21 @@ export function PriceAlert() {
             </p>
 
             {/* Mini form */}
-            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto lg:mx-0">
-              <select className="flex-1 h-12 px-4 rounded-[3px] border border-[#EDEFF2] bg-white text-[#333333] font-body text-sm focus:ring-2 focus:ring-primary focus:outline-none">
+            <div className="grid grid-cols-1 sm:grid-cols-[minmax(160px,1.1fr)_minmax(0,1.4fr)_auto] gap-3 max-w-xl mx-auto lg:mx-0 items-stretch">
+              <FilterSelect wrapperClassName="w-full min-w-[160px]" defaultValue="">
                 <option value="">Select make</option>
                 <option>Toyota</option>
                 <option>Honda</option>
                 <option>Suzuki</option>
                 <option>Kia</option>
-              </select>
+              </FilterSelect>
               <input
                 type="email"
                 placeholder="Your email"
-                className="flex-1 h-12 px-4 rounded-[3px] border border-[#EDEFF2] font-body text-sm focus:ring-2 focus:ring-primary focus:outline-none"
+                className="w-full min-w-0 h-12 px-4 rounded-[3px] border border-[#EDEFF2] bg-white font-body text-sm text-[#333333] focus:ring-2 focus:ring-primary focus:outline-none"
               />
-              <Button className="rounded-[3px] bg-primary text-[#050B20] font-bold h-12 px-6 shrink-0 gap-2">
-                <Bell className="w-4 h-4" /> Alert me
+              <Button className="w-full sm:w-auto rounded-[3px] bg-primary text-[#050B20] font-bold h-12 px-6 shrink-0 gap-2 whitespace-nowrap">
+                <Bell className="w-4 h-4 shrink-0" /> Alert me
               </Button>
             </div>
             <p className="text-xs text-[#9CA3AF] font-body mt-3 text-center lg:text-left">
