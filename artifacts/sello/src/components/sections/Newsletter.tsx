@@ -21,7 +21,7 @@ export function Newsletter() {
               Subscribe
             </Button>
           </form>
-          <p className="text-xs text-secondary/60 font-body mt-4">We respect your privacy. Unsubscribe at any time.</p>
+          <p className="text-xs font-body mt-4 text-[#ffffff99]">We respect your privacy. Unsubscribe at any time.</p>
         </div>
       </div>
     </section>

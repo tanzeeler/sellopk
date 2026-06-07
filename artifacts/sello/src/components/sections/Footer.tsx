@@ -34,7 +34,7 @@ export function Footer() {
 
           <div className="lg:w-3/4 grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>
-              <h4 className="font-[700] font-heading text-lg mb-6">Company</h4>
+              <h4 className="font-[700] font-heading text-lg mb-6 text-[#ffffff]">Company</h4>
               <ul className="flex flex-col gap-3 font-body text-sm text-white/70">
                 <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Careers</a></li>
@@ -43,7 +43,7 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <h4 className="font-[700] font-heading text-lg mb-6">Buy</h4>
+              <h4 className="font-[700] font-heading text-lg mb-6 text-[#ffffff]">Buy</h4>
               <ul className="flex flex-col gap-3 font-body text-sm text-white/70">
                 <li><a href="#" className="hover:text-primary transition-colors">Browse cars</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Cars by city</a></li>
@@ -52,7 +52,7 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <h4 className="font-[700] font-heading text-lg mb-6">Sell</h4>
+              <h4 className="font-[700] font-heading text-lg mb-6 text-[#ffffff]">Sell</h4>
               <ul className="flex flex-col gap-3 font-body text-sm text-white/70">
                 <li><a href="#" className="hover:text-primary transition-colors">Post an ad</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Pricing packages</a></li>
@@ -61,7 +61,7 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <h4 className="font-[700] font-heading text-lg mb-6">Support</h4>
+              <h4 className="font-[700] font-heading text-lg mb-6 text-[#ffffff]">Support</h4>
               <ul className="flex flex-col gap-3 font-body text-sm text-white/70">
                 <li><a href="#" className="hover:text-primary transition-colors">Help Center</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Safety Tips</a></li>
