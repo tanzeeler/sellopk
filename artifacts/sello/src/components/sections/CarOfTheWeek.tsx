@@ -20,8 +20,8 @@ export function CarOfTheWeek() {
             <div className="inline-block bg-[#16A34A]/10 text-[#16A34A] font-bold text-xs px-3 py-1 rounded-[3px] mb-4 w-fit">
               Sello Verified
             </div>
-            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-heading font-[800] text-[#0F172A] mb-2">2024 Toyota Fortuner Sigma 4</h3>
-            <div className="text-2xl sm:text-3xl md:text-4xl font-heading font-[800] text-primary mb-6">PKR 1,25,00,000</div>
+            <h3 className="sm:text-xl md:text-2xl lg:text-3xl font-heading font-[800] text-[#0F172A] mb-2 text-[20px]">2024 Toyota Fortuner Sigma 4</h3>
+            <div className="sm:text-3xl md:text-4xl font-heading font-[800] text-primary mb-6 text-[30px]">PKR 1,25,00,000</div>
 
             <div className="flex flex-wrap gap-2 mb-6">
               {['2.8L Diesel', '5,000 km', 'Automatic', 'Attitude Black'].map((tag) => (
