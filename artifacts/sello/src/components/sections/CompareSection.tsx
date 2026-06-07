@@ -17,7 +17,6 @@ export function CompareSection() {
       <div className="absolute inset-0 opacity-[0.04]"
         style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '48px 48px' }}
       />
-
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
 
@@ -64,7 +63,7 @@ export function CompareSection() {
           {/* Right: copy */}
           <div className="flex-1 text-center lg:text-left">
             <p className="text-sm font-bold text-primary uppercase tracking-widest mb-3 font-body">Smart Buying</p>
-            <h2 className="text-3xl md:text-5xl font-[800] font-heading text-white mb-6 leading-tight">
+            <h2 className="md:text-5xl font-[800] font-heading text-white mb-6 text-[23px]">
               Compare cars side<br/>by side, for free
             </h2>
             <p className="text-lg text-white/70 font-body mb-8 max-w-md mx-auto lg:mx-0">
