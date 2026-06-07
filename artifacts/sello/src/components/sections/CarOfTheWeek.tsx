@@ -10,9 +10,9 @@ export function CarOfTheWeek() {
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
           <div className="w-full lg:w-3/5 aspect-[4/3] bg-white rounded-[0px] overflow-hidden border border-[#EDEFF2] shadow-lg">
             <img 
-              src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80" 
+              src="/car-of-week.jpg" 
               alt="Toyota Fortuner Sigma 4" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-tl-[4px] rounded-tr-[4px] rounded-br-[4px] rounded-bl-[4px]"
             />
           </div>
           
