@@ -34,7 +34,7 @@ export function CompareSection() {
                   { make: 'Toyota', model: 'Corolla', year: '2021', price: '38.5 Lac' },
                 ].map((car, i) => (
                   <div key={i} className="bg-white/10 p-4 border border-white/10">
-                    <div className="text-3xl mb-2 text-center">🚗</div>
+                    <div className="flex justify-center mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white/60"><path d="M5 17H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1"/><path d="M17 17h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-1"/><path d="M14 17H8"/><path d="M5 9l2-4h10l2 4"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg></div>
                     <p className="text-white font-heading font-[700] text-sm">{car.make} {car.model}</p>
                     <p className="text-white/50 text-xs font-body">{car.year}</p>
                     <p className="text-primary font-[800] font-heading text-sm mt-1">PKR {car.price}</p>

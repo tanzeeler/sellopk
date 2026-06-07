@@ -1,4 +1,4 @@
-import { ShieldCheck, ArrowRight } from 'lucide-react';
+import { ShieldCheck, ArrowRight, Zap, ClipboardList, Shield, PhoneCall } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const partners = [
@@ -11,10 +11,10 @@ const partners = [
 ];
 
 const benefits = [
-  { icon: "⚡", title: "Instant quotes", desc: "Get quotes from top insurers in under 60 seconds" },
-  { icon: "📋", title: "Compare plans", desc: "Side-by-side plan comparison with full details" },
-  { icon: "🛡️", title: "Comprehensive cover", desc: "Theft, accident, fire & third-party protection" },
-  { icon: "📞", title: "24/7 claim support", desc: "Our team is on call to assist with any claim" },
+  { icon: Zap,           title: "Instant quotes",       desc: "Get quotes from top insurers in under 60 seconds" },
+  { icon: ClipboardList, title: "Compare plans",        desc: "Side-by-side plan comparison with full details" },
+  { icon: Shield,        title: "Comprehensive cover",  desc: "Theft, accident, fire & third-party protection" },
+  { icon: PhoneCall,     title: "24/7 claim support",   desc: "Our team is on call to assist with any claim" },
 ];
 
 export function InsuranceSection() {
@@ -49,7 +49,9 @@ export function InsuranceSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {benefits.map((b, i) => (
             <div key={i} className="bg-white border border-[#EDEFF2] p-6 hover:border-primary/30 hover:shadow-sm transition-all">
-              <div className="text-3xl mb-4">{b.icon}</div>
+              <div className="w-10 h-10 rounded-[3px] bg-primary/10 flex items-center justify-center mb-4">
+                <b.icon className="w-5 h-5 text-primary" />
+              </div>
               <h3 className="font-[700] font-heading text-[#0F172A] mb-2">{b.title}</h3>
               <p className="text-sm text-[#6B7280] font-body leading-relaxed">{b.desc}</p>
             </div>
