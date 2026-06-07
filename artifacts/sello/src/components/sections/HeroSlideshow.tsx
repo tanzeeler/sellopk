@@ -4,13 +4,13 @@ import { Button } from '@/components/ui/button';
 
 const slides = [
   {
-    image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80",
+    image: "/hero-car-1.jpg",
     headline: "Find your next car, the smart way",
     subline: "Browse 12,000+ verified listings across Pakistan",
     cta: "Browse cars"
   },
   {
-    image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80",
+    image: "/hero-car-2.jpg",
     headline: "Sell your car in minutes, for free",
     subline: "Post a free ad and reach 500+ trusted dealers",
     cta: "Post free ad"
@@ -38,7 +38,7 @@ export function HeroSlideshow() {
   return (
     <div className="relative w-full">
       {/* Slideshow — overflow-hidden stays here, search bar is NOT inside */}
-      <section className="relative w-full aspect-[16/7] min-h-[480px] bg-[#050B20] overflow-hidden">
+      <section className="relative w-full aspect-[16/7] min-h-[560px] bg-[#050B20] overflow-hidden">
         {slides.map((slide, idx) => (
           <div
             key={idx}
@@ -55,7 +55,7 @@ export function HeroSlideshow() {
               />
             </div>
             <div className="absolute inset-0 bg-[#050B20]/55" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 pb-16">
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 py-16">
               <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-[800] font-heading mb-4 max-w-4xl tracking-tight leading-tight">
                 {slide.headline}
               </h1>
