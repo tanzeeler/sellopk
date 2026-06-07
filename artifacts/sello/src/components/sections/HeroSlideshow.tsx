@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 const slides = [
   {
-    image: "/hero-car-1.jpg",
+    image: "/hero-car-0.jpg",
     headline: "Find your next car, the smart way",
     subline: "Browse 12,000+ verified listings across Pakistan",
     cta: "Browse cars"
@@ -38,7 +38,7 @@ export function HeroSlideshow() {
   return (
     <div className="relative w-full">
       {/* Slideshow — overflow-hidden stays here, search bar is NOT inside */}
-      <section className="relative w-full aspect-[16/7] min-h-[560px] bg-[#050B20] overflow-hidden">
+      <section className="relative w-full aspect-[16/7] min-h-[640px] bg-[#050B20] overflow-hidden">
         {slides.map((slide, idx) => (
           <div
             key={idx}
@@ -56,7 +56,7 @@ export function HeroSlideshow() {
             </div>
             <div className="absolute inset-0 bg-[#050B20]/55" />
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 py-16">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-[800] font-heading mb-4 max-w-4xl tracking-tight leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-[800] mb-4 max-w-4xl tracking-tight leading-tight" style={{ fontFamily: "'Figtree', sans-serif" }}>
                 {slide.headline}
               </h1>
               <p className="text-lg md:text-xl text-white/90 font-body mb-8 max-w-2xl">
