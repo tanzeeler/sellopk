@@ -53,12 +53,32 @@ const reviews = [
   },
 ];
 
+function useVisibleCount() {
+  const [count, setCount] = useState(1);
+  useEffect(() => {
+    const update = () => {
+      if (window.innerWidth >= 1024) setCount(3);
+      else if (window.innerWidth >= 640) setCount(2);
+      else setCount(1);
+    };
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+  return count;
+}
+
 export function Testimonials() {
   const [current, setCurrent] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const visibleCount = 3;
-  const maxIndex = reviews.length - visibleCount;
+  const visibleCount = useVisibleCount();
+  const maxIndex = Math.max(0, reviews.length - visibleCount);
+
+  // Reset current if it exceeds new maxIndex (e.g. after resize)
+  useEffect(() => {
+    if (current > maxIndex) setCurrent(maxIndex);
+  }, [maxIndex]);
 
   const startTimer = () => {
     if (timerRef.current) clearInterval(timerRef.current);
@@ -70,37 +90,52 @@ export function Testimonials() {
   useEffect(() => {
     if (isPlaying) startTimer();
     return () => { if (timerRef.current) clearInterval(timerRef.current); };
-  }, [isPlaying]);
+  }, [isPlaying, maxIndex]);
 
   const go = (dir: number) => {
     setIsPlaying(false);
     setCurrent(prev => Math.max(0, Math.min(maxIndex, prev + dir)));
   };
 
+  // Card width as a percentage, accounting for gap
+  const GAP = 24; // gap-6 = 24px
+  const cardWidthPct = visibleCount === 1
+    ? 100
+    : visibleCount === 2
+    ? `calc(50% - ${GAP / 2}px)`
+    : `calc(33.333% - ${(GAP * 2) / 3}px)`;
+
+  // Translate: move by (card width + gap) per step
+  const translatePerStep = visibleCount === 1
+    ? 'calc(100% + 24px)'
+    : visibleCount === 2
+    ? `calc(50% + ${GAP / 2}px)`
+    : `calc(33.333% + ${GAP / 3}px)`;
+
   return (
     <section className="py-[80px] md:py-[110px] bg-[#F8F9FA] border-t border-[#EDEFF2]">
       <div className="container mx-auto px-4">
-        <div className="flex items-end justify-between mb-10">
+        <div className="flex items-start sm:items-end justify-between mb-10 gap-4">
           <div>
             <p className="text-sm font-bold text-primary uppercase tracking-widest mb-2 font-body">Reviews</p>
-            <h2 className="text-3xl md:text-4xl font-[800] font-heading text-[#0F172A] leading-tight">
+            <h2 className="text-2xl md:text-4xl font-[800] font-heading text-[#0F172A] leading-tight">
               What our customers say
             </h2>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 shrink-0">
             <button
               onClick={() => go(-1)}
               disabled={current === 0}
-              className="p-3 border border-[#EDEFF2] bg-white hover:bg-primary hover:border-primary hover:text-[#050B20] disabled:opacity-30 disabled:cursor-not-allowed transition-colors rounded-[3px]"
+              className="p-2.5 md:p-3 border border-[#EDEFF2] bg-white hover:bg-primary hover:border-primary hover:text-[#050B20] disabled:opacity-30 disabled:cursor-not-allowed transition-colors rounded-[3px]"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
             </button>
             <button
               onClick={() => go(1)}
               disabled={current >= maxIndex}
-              className="p-3 border border-[#EDEFF2] bg-white hover:bg-primary hover:border-primary hover:text-[#050B20] disabled:opacity-30 disabled:cursor-not-allowed transition-colors rounded-[3px]"
+              className="p-2.5 md:p-3 border border-[#EDEFF2] bg-white hover:bg-primary hover:border-primary hover:text-[#050B20] disabled:opacity-30 disabled:cursor-not-allowed transition-colors rounded-[3px]"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
             </button>
           </div>
         </div>
@@ -109,14 +144,15 @@ export function Testimonials() {
         <div className="overflow-hidden">
           <div
             className="flex gap-6 transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(calc(-${current} * (100% / ${visibleCount}) - ${current} * (24px / ${visibleCount})))` }}
+            style={{ transform: `translateX(calc(-${current} * (${translatePerStep})))` }}
           >
             {reviews.map((review, idx) => (
               <div
                 key={idx}
-                className="flex-shrink-0 w-[calc(33.333%-16px)] bg-white border border-[#EDEFF2] p-8 shadow-sm hover:shadow-md transition-shadow"
+                className="flex-shrink-0 bg-white border border-[#EDEFF2] p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow"
+                style={{ width: typeof cardWidthPct === 'number' ? `${cardWidthPct}%` : cardWidthPct }}
               >
-                <div className="flex gap-0.5 mb-5">
+                <div className="flex gap-0.5 mb-4">
                   {[...Array(review.rating)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-primary text-primary" />
                   ))}
@@ -124,7 +160,7 @@ export function Testimonials() {
                     <Star key={i} className="w-4 h-4 text-[#EDEFF2]" />
                   ))}
                 </div>
-                <p className="text-[#4B5563] font-body italic leading-relaxed mb-6">
+                <p className="text-[#4B5563] font-body italic leading-relaxed mb-6 text-sm md:text-base">
                   "{review.quote}"
                 </p>
                 <div className="flex items-center gap-3">

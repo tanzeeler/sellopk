@@ -37,7 +37,6 @@ export function HeroSlideshow() {
 
   return (
     <div className="relative w-full">
-      {/* Slideshow — overflow-hidden stays here, search bar is NOT inside */}
       <section className="relative w-full aspect-[16/7] min-h-[640px] bg-[#050B20] overflow-hidden">
         {slides.map((slide, idx) => (
           <div
@@ -55,34 +54,39 @@ export function HeroSlideshow() {
               />
             </div>
             <div className="absolute inset-0 bg-[#050B20]/55" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 py-16">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-[800] mb-4 max-w-4xl tracking-tight leading-tight" style={{ fontFamily: "'Figtree', sans-serif" }}>
+
+            {/* Content — padded enough on mobile so arrows never overlap text */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-16 md:px-12 py-16">
+              <h1
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-[800] mb-4 max-w-3xl tracking-tight leading-tight"
+                style={{ fontFamily: "'Figtree', sans-serif" }}
+              >
                 {slide.headline}
               </h1>
-              <p className="text-lg md:text-xl text-white/90 font-body mb-8 max-w-2xl">
+              <p className="text-base md:text-xl text-white/90 font-body mb-8 max-w-2xl">
                 {slide.subline}
               </p>
-              <Button size="lg" className="rounded-[3px] bg-primary text-[#050B20] hover:bg-primary/90 text-base font-bold px-8 h-14">
+              <Button size="lg" className="rounded-[3px] bg-primary text-[#050B20] hover:bg-primary/90 text-base font-bold px-8 h-12 md:h-14">
                 {slide.cta}
               </Button>
             </div>
           </div>
         ))}
 
-        {/* Prev/Next arrows */}
+        {/* Arrows — smaller on mobile, pushed to bottom-ish on very small screens */}
         <button
           onClick={() => { setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length); setIsPlaying(false); }}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-black/20 text-white hover:bg-black/40 backdrop-blur-sm transition-colors"
+          className="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-black/25 text-white hover:bg-black/50 backdrop-blur-sm transition-colors"
           data-testid="button-prev-slide"
         >
-          <ChevronLeft className="w-6 h-6" />
+          <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
         </button>
         <button
           onClick={() => { setCurrentSlide((prev) => (prev + 1) % slides.length); setIsPlaying(false); }}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-black/20 text-white hover:bg-black/40 backdrop-blur-sm transition-colors"
+          className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-black/25 text-white hover:bg-black/50 backdrop-blur-sm transition-colors"
           data-testid="button-next-slide"
         >
-          <ChevronRight className="w-6 h-6" />
+          <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
         </button>
 
         {/* Dot / progress indicators */}
@@ -91,7 +95,7 @@ export function HeroSlideshow() {
             <button
               key={idx}
               onClick={() => { setCurrentSlide(idx); setIsPlaying(false); }}
-              className="relative h-1.5 w-12 rounded-full overflow-hidden bg-white/30"
+              className="relative h-1.5 w-10 rounded-full overflow-hidden bg-white/30"
               data-testid={`button-slide-dot-${idx}`}
             >
               {idx === currentSlide && isPlaying && (
@@ -115,7 +119,7 @@ export function HeroSlideshow() {
         `}} />
       </section>
 
-      {/* Floating Quick Search Bar — lives OUTSIDE the overflow-hidden section */}
+      {/* Floating Quick Search Bar */}
       <div className="relative z-30 w-full px-4 -mt-[36px]">
         <div className="container mx-auto max-w-5xl">
           <div className="bg-white shadow-2xl border border-[#EDEFF2] p-4 md:p-5 flex flex-col md:flex-row gap-3 items-stretch md:items-center">
