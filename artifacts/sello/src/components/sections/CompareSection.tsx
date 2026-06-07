@@ -36,10 +36,10 @@ export function CompareSection() {
         style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '48px 48px' }}
       />
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-20 items-center lg:items-center">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-10 xl:gap-12">
 
           {/* Left: mock compare UI */}
-          <div className="flex-1 w-full max-w-lg mx-auto lg:mx-0">
+          <div className="w-full lg:flex-1 lg:max-w-[460px] mx-auto lg:mx-0">
             <div className="bg-white/5 border border-white/10 p-6 backdrop-blur-sm">
               <div className="flex items-center gap-2 mb-5">
                 <GitCompareArrows className="w-5 h-5 text-primary" />
@@ -82,8 +82,8 @@ export function CompareSection() {
           </div>
 
           {/* Right: copy */}
-          <div className="flex-1 w-full flex justify-center lg:justify-end">
-            <div className="w-full max-w-md lg:max-w-[400px] lg:pl-10 xl:pl-16">
+          <div className="w-full lg:flex-1 flex justify-center lg:justify-start">
+            <div className="w-full max-w-md lg:max-w-[420px]">
               <p className="text-sm font-bold text-primary uppercase tracking-widest mb-3 font-body text-center lg:text-left">
                 Smart Buying
               </p>
