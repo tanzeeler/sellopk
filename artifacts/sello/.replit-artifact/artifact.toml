@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Sello — Car Marketplace"
+version = "1.0.0"
+id = "artifacts/sello"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25749
+
+[services.development]
+run = "pnpm --filter @workspace/sello run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/sello", "run", "build" ]
+publicDir = "artifacts/sello/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25749"
+BASE_PATH = "/"

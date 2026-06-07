@@ -1,0 +1,64 @@
+ROLE: Senior product designer. Build a complete, LONG, premium homepage for "Sello" — a car marketplace for Pakistan (buy & sell cars, verified listings, smart filters, trusted dealers). It must be a rich, scroll-heavy flagship page — NOT short, NOT a plain hero. Modern 2026 SaaS quality. Fully responsive (1440/1024/768/375px), zero cut/cropped images, zero broken layouts.
+
+━━━━━━━━ NON-NEGOTIABLE FIXES ━━━━━━━━
+1. GLASS STICKY HEADER: frosted glassmorphism (navy #050B20 @72% + backdrop-blur 16px, 1px bottom hairline). Sticky, shrinks + darkens after 80px scroll. Mobile → glass hamburger drawer.
+2. HERO = FULL SLIDESHOW/SLIDER (Slider Revolution style), NOT a static hero.
+3. NO CUT IMAGES: every image in a fixed aspect-ratio frame (slides 16:7, cars 16:10, city 4:3, logos 1:1) with object-fit: cover, centered. Nothing clipped, stretched, or bleeding off-screen.
+4. LONG PAGE: build ALL sections below with 80–110px padding. Page must be tall and substantial.
+5. FULL detailed footer, not a thin strip.
+
+━━━━━━━━ DESIGN TOKENS ━━━━━━━━
+Colors: accent #FFA602 (text on amber=#050B20) · cream #FFF8E6 · navy #050B20 · heading #0F172A · body #333333/#4B5563 · muted #6B7280 · page-bg #F9FAFB · cards #FFFFFF · hairline #EDEFF2 · danger/sold #B91C1C · success/verified #16A34A.
+Fonts: Montserrat (700/800) headings, prices, counters; Figtree (400/500/600) body/UI. Sentence case. Tabular figures on all numbers.
+Shape: cards/containers 0 radius (sharp); buttons/inputs/chips 8px. 8px spacing grid. Flat — depth only from soft hover shadow + glass blur. No decorative gradients.
+
+━━━━━━━━ ANIMATIONS (all) ━━━━━━━━
+Hero slider: auto-rotate 5s, slide/fade transition, Ken Burns zoom on image, prev/next arrows, dot indicators, progress bar. Scroll-reveal fade-up per section (stagger children 60ms). Stat counters tick from 0 in view. Car cards: hover lift + contained image zoom (scale 1.05, no overflow). Brand logos: infinite auto-scroll marquee. Smooth 150ms button/input hover + amber focus ring.
+
+━━━━━━━━ SECTIONS (build ALL, in order) ━━━━━━━━
+1. GLASS STICKY HEADER — amber Sello logo · nav (Buy, Sell, Dealers, Compare, Pricing, Help) · ghost Login · amber "Sell your car".
+
+2. HERO SLIDESHOW (full-width, navy, Slider Revolution style) — 3 rotating slides, each a full-bleed car image (16:7, fully visible) + dark overlay + animated headline, subline, amber CTA:
+   • Slide 1 "Find your next car, the smart way" → Browse cars
+   • Slide 2 "Sell your car in minutes, for free" → Post free ad
+   • Slide 3 "Verified listings, trusted dealers only" → View verified cars
+   Overlay a floating white quick-search bar pinned across the bottom of the slider: Make · Model · City · Price · amber "Search" — stays put while slides rotate. Arrows + dots + progress bar.
+
+3. QUICK STATS BAR (thin strip under hero) — 12,000+ listings · 500+ dealers · 30+ cities · 8,500+ sold, with line icons.
+
+4. BROWSE BY BODY TYPE — row of icon chips (Sedan, SUV, Hatchback, Crossover, Pickup, Van, Coupe, MPV).
+
+5. POPULAR BRANDS — infinite marquee of brand logo pills (Toyota, Honda, Suzuki, Kia, Hyundai, MG, Nissan, Daihatsu, Changan, Haval).
+
+6. FEATURED LISTINGS (RICH GRID — many cards) — section title + sort dropdown + "View all". A LARGE responsive grid of 12 car cards (4 cols desktop → 2 tablet → 1 mobile). Each card: photo 16:10 + verified/featured/sold badge top-left + save-heart top-right, bold PKR price, year-make-model title, 4-icon spec row (mileage, city, fuel, transmission), divider, dealer name + location. Hover lift. Include a "Load more cars" button below.
+
+7. CAR OF THE WEEK (spotlight band, cream) — one large featured car: big image left, details right (price, specs grid, highlights, amber "View details" + outline "Contact dealer").
+
+8. WHY SELLO (4 feature cards) — Verified listings, Trusted dealers, Smart filters, Secure contact — icon + title + text.
+
+9. BROWSE BY CITY — grid of 8 city tiles (4:3 image, gradient overlay, city name + listing count): Karachi, Lahore, Islamabad, Rawalpindi, Faisalabad, Multan, Peshawar, Quetta.
+
+10. POPULAR SEARCHES / PRICE RANGES — chips like "Under 20 lac", "20–40 lac", "Automatic", "Toyota Corolla", "SUVs in Lahore".
+
+11. SELL YOUR CAR IN 3 STEPS (navy band) — numbered steps List · Connect · Sell + amber "Post your ad free".
+
+12. CAR FINANCE / EMI CALCULATOR (cream or white) — simple interactive widget: price slider, down payment, tenure → monthly EMI output + amber "Apply for financing".
+
+13. TRUSTED DEALERS — grid of dealer cards (logo/initials, verified check, rating stars, listings count, location).
+
+14. STATS STRIP (animated counters) — cars listed, dealers, cities, cars sold.
+
+15. TESTIMONIALS — carousel/grid of buyer & seller reviews (avatar, name, city, stars, quote).
+
+16. LATEST FROM BLOG — 3 article cards (image 16:10, category tag, title, date, read-more) e.g. "Best used SUVs under 40 lac", "How to inspect a used car", "2026 car price trends in Pakistan".
+
+17. FAQ ACCORDION — 5–6 expandable questions (Is it free to list? How are cars verified? How do I contact a seller? etc.).
+
+18. DOWNLOAD THE APP (navy or cream band) — phone mockup + headline + App Store & Google Play badges.
+
+19. FINAL CTA / NEWSLETTER — headline + email input + amber subscribe button.
+
+20. FULL FOOTER (navy, detailed): Sello logo + tagline + social icons (FB, IG, X, YouTube); 4 link columns — Company (About, Careers, Blog, Contact), Buy (Browse cars, By city, By brand, Financing), Sell (Post ad, Pricing, Dealer signup, Sell guide), Support (Help center, Safety tips, Terms, Privacy); bottom bar with hairline divider, "© 2026 Sello. All rights reserved.", app badges, payment/trust icons. Amber hover on links.
+
+━━━━━━━━ QUALITY BAR ━━━━━━━━
+WCAG-AA contrast, visible focus, 44px tap targets, perfect alignment + spacing on every breakpoint, realistic Pakistani car data + PKR pricing throughout. Deliver one long, cohesive, premium homepage — glass sticky header, full slideshow hero, a rich 12-card listings grid, finance calculator, blog, FAQ, app section, and a complete footer.

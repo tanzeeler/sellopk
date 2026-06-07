@@ -1,0 +1,29 @@
+import { Button } from '@/components/ui/button';
+
+export function Newsletter() {
+  return (
+    <section className="bg-primary py-[80px]">
+      <div className="container mx-auto px-4 text-center">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-[800] font-heading text-secondary mb-4">Stay ahead of the market</h2>
+          <p className="text-secondary/80 font-body text-lg mb-8 font-medium">
+            Get weekly price alerts, market trends, and new listing notifications straight to your inbox.
+          </p>
+          
+          <form className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto" onSubmit={(e) => e.preventDefault()}>
+            <input 
+              type="email" 
+              placeholder="Enter your email address" 
+              required
+              className="flex-1 h-14 px-6 rounded-[8px] border-none bg-white text-[#0F172A] font-body placeholder:text-[#6B7280] focus:ring-4 focus:ring-secondary/20 focus:outline-none transition-shadow"
+            />
+            <Button type="submit" className="h-14 px-8 rounded-[8px] bg-secondary text-white font-bold text-lg hover:bg-secondary/90 transition-colors">
+              Subscribe
+            </Button>
+          </form>
+          <p className="text-xs text-secondary/60 font-body mt-4">We respect your privacy. Unsubscribe at any time.</p>
+        </div>
+      </div>
+    </section>
+  );
+}
