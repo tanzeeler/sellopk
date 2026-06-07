@@ -82,9 +82,7 @@ export function HotDeals() {
             >
               {/* Image placeholder with tag */}
               <div className="relative h-44 bg-gradient-to-br from-[#F1F3F5] to-[#E8EAED] overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-6xl opacity-20">🚗</span>
-                </div>
+
                 <span className={`absolute top-3 left-3 text-xs font-bold text-white px-2.5 py-1 rounded-[3px] ${deal.color}`}>
                   {deal.tag}
                 </span>
