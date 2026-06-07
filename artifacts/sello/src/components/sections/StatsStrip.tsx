@@ -43,7 +43,7 @@ function Counter({ target, duration = 2000, suffix = "" }: { target: number, dur
 
   const formatted = new Intl.NumberFormat('en-US').format(count);
 
-  return <span ref={nodeRef}>{formatted}{suffix}</span>;
+  return <span ref={nodeRef} className="text-[20px]">{formatted}{suffix}</span>;
 }
 
 export function StatsStrip() {

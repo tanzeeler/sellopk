@@ -7,7 +7,7 @@ export function DownloadApp() {
         <div className="flex flex-col md:flex-row items-center gap-12 py-[80px] md:py-[110px]">
           
           <div className="flex-1 text-center md:text-left z-10">
-            <h2 className="text-3xl md:text-5xl font-[800] font-heading text-white mb-6 leading-tight">
+            <h2 className="md:text-5xl font-[800] font-heading text-white mb-6 text-[22px]">
               Take Sello with you,<br/>everywhere
             </h2>
             <p className="text-lg text-white/80 font-body mb-10 max-w-md mx-auto md:mx-0">
