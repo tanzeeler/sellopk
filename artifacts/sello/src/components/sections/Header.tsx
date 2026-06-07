@@ -21,9 +21,12 @@ export function Header() {
     >
       <div className="container mx-auto px-4 h-full flex items-center justify-between">
         <Link href="/">
-          <div className="text-2xl font-[800] font-heading text-white cursor-pointer">
-            <span className="text-primary">S</span>ello
-          </div>
+          <img
+            src="https://sello.pk/assets/blackLogo-BWAk2Vcy.svg"
+            alt="Sello"
+            className="h-8 w-auto cursor-pointer"
+            style={{ filter: 'brightness(0) invert(1)' }}
+          />
         </Link>
         <nav className="hidden md:flex items-center gap-6">
           {['Buy', 'Sell', 'Dealers', 'Compare', 'Pricing', 'Help'].map(link => (

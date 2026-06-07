@@ -7,9 +7,12 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-12 mb-16">
           <div className="lg:w-1/4">
-            <h2 className="text-3xl font-[800] font-heading mb-4 text-white">
-              <span className="text-primary">S</span>ello
-            </h2>
+            <img
+              src="https://sello.pk/assets/blackLogo-BWAk2Vcy.svg"
+              alt="Sello"
+              className="h-9 w-auto mb-4"
+              style={{ filter: 'brightness(0) invert(1)' }}
+            />
             <p className="text-white/70 font-body text-sm mb-6 leading-relaxed">
               Pakistan's most trusted car marketplace. Buy, sell, and finance cars with complete peace of mind.
             </p>
