@@ -62,7 +62,7 @@ export function HeroSlideshow() {
               <p className="text-lg md:text-xl text-white/90 font-body mb-8 max-w-2xl">
                 {slide.subline}
               </p>
-              <Button size="lg" className="rounded-[8px] bg-primary text-[#050B20] hover:bg-primary/90 text-base font-bold px-8 h-14">
+              <Button size="lg" className="rounded-[3px] bg-primary text-[#050B20] hover:bg-primary/90 text-base font-bold px-8 h-14">
                 {slide.cta}
               </Button>
             </div>
@@ -121,7 +121,7 @@ export function HeroSlideshow() {
           <div className="bg-white shadow-2xl border border-[#EDEFF2] p-4 md:p-5 flex flex-col md:flex-row gap-3 items-stretch md:items-center">
             <select
               data-testid="select-make"
-              className="w-full md:flex-1 h-12 px-4 rounded-[8px] border border-[#EDEFF2] bg-white text-[#333333] font-body text-sm focus:ring-2 focus:ring-primary focus:outline-none"
+              className="w-full md:flex-1 h-12 px-4 rounded-[3px] border border-[#EDEFF2] bg-white text-[#333333] font-body text-sm focus:ring-2 focus:ring-primary focus:outline-none"
             >
               <option value="">Make</option>
               <option value="toyota">Toyota</option>
@@ -133,7 +133,7 @@ export function HeroSlideshow() {
             </select>
             <select
               data-testid="select-model"
-              className="w-full md:flex-1 h-12 px-4 rounded-[8px] border border-[#EDEFF2] bg-white text-[#333333] font-body text-sm focus:ring-2 focus:ring-primary focus:outline-none"
+              className="w-full md:flex-1 h-12 px-4 rounded-[3px] border border-[#EDEFF2] bg-white text-[#333333] font-body text-sm focus:ring-2 focus:ring-primary focus:outline-none"
             >
               <option value="">Model</option>
               <option value="corolla">Corolla</option>
@@ -144,7 +144,7 @@ export function HeroSlideshow() {
             </select>
             <select
               data-testid="select-city"
-              className="w-full md:flex-1 h-12 px-4 rounded-[8px] border border-[#EDEFF2] bg-white text-[#333333] font-body text-sm focus:ring-2 focus:ring-primary focus:outline-none"
+              className="w-full md:flex-1 h-12 px-4 rounded-[3px] border border-[#EDEFF2] bg-white text-[#333333] font-body text-sm focus:ring-2 focus:ring-primary focus:outline-none"
             >
               <option value="">City</option>
               <option value="karachi">Karachi</option>
@@ -155,7 +155,7 @@ export function HeroSlideshow() {
             </select>
             <select
               data-testid="select-price"
-              className="w-full md:flex-1 h-12 px-4 rounded-[8px] border border-[#EDEFF2] bg-white text-[#333333] font-body text-sm focus:ring-2 focus:ring-primary focus:outline-none"
+              className="w-full md:flex-1 h-12 px-4 rounded-[3px] border border-[#EDEFF2] bg-white text-[#333333] font-body text-sm focus:ring-2 focus:ring-primary focus:outline-none"
             >
               <option value="">Price Range</option>
               <option value="u10">Under 10 Lac</option>
@@ -166,7 +166,7 @@ export function HeroSlideshow() {
             </select>
             <Button
               data-testid="button-search"
-              className="w-full md:w-auto h-12 px-8 rounded-[8px] bg-primary text-[#050B20] font-bold text-base hover:bg-primary/90 flex items-center justify-center gap-2 shrink-0"
+              className="w-full md:w-auto h-12 px-8 rounded-[3px] bg-primary text-[#050B20] font-bold text-base hover:bg-primary/90 flex items-center justify-center gap-2 shrink-0"
             >
               <Search className="w-5 h-5" /> Search
             </Button>
