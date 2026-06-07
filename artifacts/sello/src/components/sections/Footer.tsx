@@ -1,5 +1,5 @@
 import { SiFacebook, SiInstagram, SiX, SiYoutube, SiAppstore, SiGoogleplay } from 'react-icons/si';
-import { Shield, CheckCircle } from 'lucide-react';
+import { ShieldCheck, CheckCircle } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -85,7 +85,7 @@ export function Footer() {
           </div>
 
           <div className="flex items-center gap-4 text-white/50 text-xs font-body">
-            <div className="flex items-center gap-1"><Shield className="w-4 h-4 text-[#16A34A]" /> Secure Platform</div>
+            <div className="flex items-center gap-1"><ShieldCheck className="w-4 h-4 text-[#16A34A]" /> Secure Platform</div>
             <div className="flex items-center gap-1"><CheckCircle className="w-4 h-4 text-primary" /> Verified Network</div>
           </div>
         </div>
