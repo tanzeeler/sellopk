@@ -46,12 +46,15 @@ export function HeroSlideshow() {
             }`}
           >
             <div className="absolute inset-0 w-full h-full overflow-hidden">
-              <img
-                src={slide.image}
-                alt={slide.headline}
-                className="w-full h-full object-cover object-center"
-                style={{ transform: idx === currentSlide ? 'scale(1.08)' : 'scale(1)', transition: 'transform 5000ms linear' }}
-              />
+              <picture>
+                <source media="(max-width: 639px)" srcSet="/hero-mobile.jpg" />
+                <img
+                  src={slide.image}
+                  alt={slide.headline}
+                  className="w-full h-full object-cover object-center"
+                  style={{ transform: idx === currentSlide ? 'scale(1.08)' : 'scale(1)', transition: 'transform 5000ms linear' }}
+                />
+              </picture>
             </div>
             <div className="absolute inset-0 bg-[#050B20]/55" />
 
