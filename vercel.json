@@ -1,0 +1,5 @@
+{
+  "buildCommand": "pnpm --filter sello build",
+  "outputDirectory": "artifacts/sello/dist/public",
+  "installCommand": "pnpm install"
+}
