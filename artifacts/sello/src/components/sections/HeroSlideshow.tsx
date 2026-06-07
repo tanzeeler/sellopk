@@ -5,7 +5,7 @@ import { FilterSelect } from '@/components/ui/filter-select';
 import { publicAsset } from '@/lib/public-asset';
 import './hero-slider.css';
 
-const DEFAULT_MOBILE_HERO_IMAGE = publicAsset('hero-mobile.png');
+const DEFAULT_MOBILE_HERO_IMAGE = publicAsset('hero-mobile.webp');
 
 const PHONE_ICON = (
   <svg viewBox="0 0 24 24">
@@ -15,7 +15,8 @@ const PHONE_ICON = (
 
 const slides = [
   {
-    image: 'https://i.postimg.cc/5t81NGYK/Chat-GPT-Image-Jun-6-2026-10-44-36-PM.png',
+    image: publicAsset('hero-slide-1.webp'),
+    mobileImage: publicAsset('hero-mobile.webp'),
     alt: 'Find your next car',
     tag: "Pakistan's Smart Marketplace",
     title: (
@@ -31,7 +32,7 @@ const slides = [
   },
   {
     image: publicAsset('hero-slide-2.jpg'),
-    mobileImage: publicAsset('hero-mobile-slide-2.png'),
+    mobileImage: publicAsset('hero-mobile-slide-2.webp'),
     alt: 'Sell your car',
     tag: 'Free To List',
     title: (
@@ -45,7 +46,8 @@ const slides = [
     cta: 'Post Free Ad',
   },
   {
-    image: 'https://i.postimg.cc/3w27J64F/pexels-qasem-alqallaf-541520273-16586236.jpg',
+    image: publicAsset('hero-slide-3.jpg'),
+    mobileImage: publicAsset('hero-mobile.webp'),
     alt: 'Verified listings',
     tag: 'Trusted Dealers Only',
     title: (
@@ -100,6 +102,19 @@ export function HeroSlideshow() {
   }, [currentSlide]);
 
   useEffect(() => {
+    const preload = (src: string) => {
+      const img = new Image();
+      img.src = src;
+    };
+
+    const next = (currentSlide + 1) % slides.length;
+    [slides[currentSlide], slides[next]].forEach((slide) => {
+      preload(slide.mobileImage ?? DEFAULT_MOBILE_HERO_IMAGE);
+      preload(slide.image);
+    });
+  }, [currentSlide]);
+
+  useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
       setProgressKey((key) => key + 1);
@@ -144,12 +159,21 @@ export function HeroSlideshow() {
             key={idx}
             className={`mp-slide${idx === currentSlide ? ' active' : ''}`}
           >
-            <img className="mp-bg mp-bg-desktop" src={slide.image} alt={slide.alt} />
-            <img
-              className="mp-bg mp-bg-mobile"
-              src={slide.mobileImage ?? DEFAULT_MOBILE_HERO_IMAGE}
-              alt={slide.alt}
-            />
+            <picture className="mp-bg-picture">
+              <source
+                media="(max-width: 767px)"
+                srcSet={slide.mobileImage ?? DEFAULT_MOBILE_HERO_IMAGE}
+                type="image/webp"
+              />
+              <img
+                className="mp-bg"
+                src={slide.image}
+                alt={slide.alt}
+                loading={idx === 0 ? 'eager' : 'lazy'}
+                fetchPriority={idx === 0 ? 'high' : 'low'}
+                decoding={idx === 0 ? 'sync' : 'async'}
+              />
+            </picture>
             <div className="mp-content">
               <span className="mp-tag">{slide.tag}</span>
               <h1 className="mp-title">{slide.title}</h1>

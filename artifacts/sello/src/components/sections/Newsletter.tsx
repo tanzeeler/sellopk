@@ -10,14 +10,20 @@ export function Newsletter() {
             Get weekly price alerts, market trends, and new listing notifications straight to your inbox.
           </p>
           
-          <form className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto" onSubmit={(e) => e.preventDefault()}>
-            <input 
-              type="email" 
-              placeholder="Enter your email address" 
+          <form
+            className="flex w-full max-w-xl mx-auto flex-col md:flex-row gap-3 items-stretch"
+            onSubmit={(e) => e.preventDefault()}
+          >
+            <input
+              type="email"
+              placeholder="Enter your email address"
               required
-              className="flex-1 h-12 md:h-14 px-5 rounded-[3px] border-none bg-white text-[#0F172A] font-body placeholder:text-[#6B7280] focus:ring-4 focus:ring-secondary/20 focus:outline-none transition-shadow"
+              className="w-full min-w-0 flex-1 h-12 md:h-14 px-5 rounded-[3px] border-none bg-white text-[#0F172A] font-body text-base placeholder:text-[#6B7280] focus:ring-4 focus:ring-secondary/20 focus:outline-none transition-shadow"
             />
-            <Button type="submit" className="h-12 md:h-14 px-8 rounded-[3px] bg-secondary text-white font-bold text-base md:text-lg hover:bg-secondary/90 transition-colors">
+            <Button
+              type="submit"
+              className="w-full md:w-auto h-12 md:h-14 px-8 rounded-[3px] bg-secondary text-white font-bold text-base md:text-lg hover:bg-secondary/90 transition-colors shrink-0"
+            >
               Subscribe
             </Button>
           </form>
