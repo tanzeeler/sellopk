@@ -33,7 +33,7 @@ export function SellSteps() {
   return (
     <section className="py-[80px] md:py-[110px] bg-secondary" ref={sectionRef}>
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-[800] font-heading text-white mb-12 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[800] font-heading text-white mb-12 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
           Sell your car in 3 steps
         </h2>
 

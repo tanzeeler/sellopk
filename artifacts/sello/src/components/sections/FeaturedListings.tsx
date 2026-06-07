@@ -43,7 +43,7 @@ export function FeaturedListings() {
     <section className="py-[80px] md:py-[110px] bg-background" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
-          <h2 className="text-3xl md:text-4xl font-[800] font-heading text-[#0F172A] scroll-reveal opacity-0 translate-y-8 transition-all duration-700">Featured Listings</h2>
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[800] font-heading text-[#0F172A] scroll-reveal opacity-0 translate-y-8 transition-all duration-700">Featured Listings</h2>
           <div className="flex items-center gap-4 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
             <select className="bg-white border border-[#EDEFF2] rounded-[8px] px-3 py-2 text-sm font-body font-medium focus:ring-2 focus:ring-primary focus:outline-none">
               <option>Sort by: Recommended</option>

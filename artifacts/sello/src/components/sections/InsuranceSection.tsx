@@ -25,7 +25,7 @@ export function InsuranceSection() {
           <div className="inline-flex items-center gap-2 text-sm font-bold text-primary uppercase tracking-widest mb-3 font-body">
             <ShieldCheck className="w-4 h-4" /> Sello Insurance
           </div>
-          <h2 className="text-3xl md:text-4xl font-[800] font-heading text-[#0F172A] mb-4 leading-tight">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[800] font-heading text-[#0F172A] mb-4 leading-tight">
             Insure your car before<br className="hidden md:block" /> you drive it home
           </h2>
           <p className="text-lg text-[#6B7280] font-body max-w-xl mx-auto">

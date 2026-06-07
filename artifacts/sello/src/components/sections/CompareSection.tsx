@@ -63,7 +63,7 @@ export function CompareSection() {
           {/* Right: copy */}
           <div className="flex-1 text-center lg:text-left">
             <p className="text-sm font-bold text-primary uppercase tracking-widest mb-3 font-body">Smart Buying</p>
-            <h2 className="md:text-5xl font-[800] font-heading text-white mb-6 text-[23px]">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-[800] font-heading text-white mb-6">
               Compare cars side<br/>by side, for free
             </h2>
             <p className="text-lg text-white/70 font-body mb-8 max-w-md mx-auto lg:mx-0">

@@ -65,7 +65,7 @@ export function HotDeals() {
             <p className="text-sm font-bold text-primary uppercase tracking-widest mb-2 font-body flex items-center gap-1.5">
               <Flame className="w-4 h-4" /> Limited Time
             </p>
-            <h2 className="text-3xl md:text-4xl font-[800] font-heading text-[#0F172A] leading-tight">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[800] font-heading text-[#0F172A] leading-tight">
               Hot Deals This Week
             </h2>
           </div>

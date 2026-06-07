@@ -24,7 +24,7 @@ export function EmiCalculator() {
     <section className="py-[80px] md:py-[110px] bg-[#FFF8E6]">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-[800] font-heading text-[#0F172A] mb-4">Calculate Your EMI</h2>
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[800] font-heading text-[#0F172A] mb-4">Calculate Your EMI</h2>
           <p className="text-[#6B7280] font-body text-lg">Plan your budget with our easy car finance calculator.</p>
         </div>
 

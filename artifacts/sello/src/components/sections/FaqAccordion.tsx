@@ -36,7 +36,7 @@ export function FaqAccordion() {
   return (
     <section className="py-[80px] md:py-[110px] bg-white border-t border-[#EDEFF2]">
       <div className="container mx-auto px-4 max-w-3xl">
-        <h2 className="text-3xl md:text-4xl font-[800] font-heading text-[#0F172A] mb-10 text-center">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[800] font-heading text-[#0F172A] mb-10 text-center">
           Frequently asked questions
         </h2>
 

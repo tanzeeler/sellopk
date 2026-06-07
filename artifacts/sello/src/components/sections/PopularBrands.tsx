@@ -8,7 +8,7 @@ export function PopularBrands() {
   return (
     <section className="py-[80px] bg-background border-t border-[#EDEFF2] overflow-hidden">
       <div className="container mx-auto px-4 mb-8">
-        <h2 className="text-3xl font-[800] font-heading text-[#0F172A]">Popular Brands</h2>
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-[800] font-heading text-[#0F172A]">Popular Brands</h2>
       </div>
       
       <div className="relative w-full flex overflow-hidden">

@@ -35,7 +35,7 @@ export function TrustedDealers() {
   return (
     <section className="py-[80px] md:py-[110px] bg-background" ref={sectionRef}>
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-[800] font-heading text-[#0F172A] mb-8 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[800] font-heading text-[#0F172A] mb-8 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
           Trusted Dealers
         </h2>
 
